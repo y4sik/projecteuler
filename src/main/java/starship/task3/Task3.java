@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 class Task3 {
-    static List<Long> largestPrimeFactor(long number) {
+    static List<Long> findPrimeFactors(long number) {
         List<Long> primeFactorList = new ArrayList<>();
         while (true) {
-            long smallestFactor = calcSmallestFactor(number);
+            long smallestFactor = findSmallestFactor(number);
             if (smallestFactor < number) {
                 number /= smallestFactor;
                 primeFactorList.add(smallestFactor);
@@ -18,7 +18,7 @@ class Task3 {
         }
     }
 
-    private static long calcSmallestFactor(long n) {
+    private static long findSmallestFactor(long n) {
         long end = (long) Math.ceil(Math.sqrt(n));
         for (long i = 2; i <= end; i++) {
             if (n % i == 0) {
