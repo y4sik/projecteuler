@@ -1,4 +1,4 @@
-package starship.task1.task9;
+package starship.task9;
 
 public class TaskRunner {
 
