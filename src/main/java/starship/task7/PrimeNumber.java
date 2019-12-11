@@ -1,11 +1,15 @@
 package starship.task7;
 
-public class Task7 {
-
-    public static int firstPrime(int limit) {
+public class PrimeNumber {
+    /**
+     * Finds nth prime number
+     * @param n number on which a prime number is located
+     * @return nth prime number
+     */
+    public static int firstPrime(int n) {
         int count = 0;
         int i = 0;
-        while (count < limit) {
+        while (count < n) {
             i++;
             if (isPrime(i)) {
                 count += 1;
