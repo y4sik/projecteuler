@@ -4,6 +4,6 @@ public class TaskRunner {
     private static final int LIMIT = 4_000_000;
 
     public static void main(String[] args) {
-        System.out.println(Fibonacci.evenFibonacciSum(LIMIT));
+        System.out.println(Fibonacci.findEvenSumOfEvenFibonacciNumbers(LIMIT));
     }
 }
