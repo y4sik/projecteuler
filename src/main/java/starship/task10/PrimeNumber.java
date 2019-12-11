@@ -1,8 +1,13 @@
 package starship.task10;
 
-public class Task10 {
-
-    public static long sumPrimes(int limit) {
+public class PrimeNumber {
+    /**
+     * Find the sum of all the primes below limit
+     *
+     * @param limit the number to which prime numbers must be found
+     * @return sum of primes below limit
+     */
+    public static long findSumPrimes(int limit) {
         long sum = 0;
         for (int i = 0; i < limit; i++) {
             if (isPrime(i)) {
