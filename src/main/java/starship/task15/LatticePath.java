@@ -1,22 +1,21 @@
 package starship.task15;
 
 import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 
 public class LatticePath {
     /**
      * Counts the number of routes using the formula C=n!/(k!/(n-k)!)
-     * @param n
-     * @return count of routes
+     * A k-combination of a set S is a subset of k distinct elements of S.
+     * If the set has n elements, the number of k-combinations is equal to
+     * the binomial coefficient.
+     *
+     * @param n n=2k
+     * @param k grid size, k ≥ 0
+     * @return count of routes in a grid {k,k} size.
      */
     public static BigInteger findQuantityOfRoutes(int n, int k) {
-        new HashMap<>().put(1, "one");
-        Arrays.binarySearch(new int[]{1, 2}, 1);
         return factorial(n).divide(factorial(k).multiply(factorial(n - k)));
     }
-
 
     private static BigInteger factorial(int n) {
         BigInteger result = BigInteger.ONE;
