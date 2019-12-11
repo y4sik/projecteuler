@@ -1,6 +1,13 @@
 package starship.task2;
 
-public class Task2 {
+public class Fibonacci {
+
+    /**
+     * Find the sum of even Fibonacci numbers, below limit
+     *
+     * @param limit the restriction for finding fibonacci numbers
+     * @return sum of even Fibonacci numbers
+     */
     public static int evenFibonacciSum(int limit) {
         int sum = 0;
         int f1 = 1;
