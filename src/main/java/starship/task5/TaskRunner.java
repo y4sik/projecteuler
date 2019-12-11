@@ -1,7 +1,11 @@
 package starship.task5;
 
 public class TaskRunner {
+
+    private static final int FROM = 1;
+    private static final int TO = 20;
+
     public static void main(String[] args) {
-        System.out.println(Task5.smallestMultiple(1, 20));
+        System.out.println(Multiple.findSmallestMultiple(FROM, TO));
     }
 }
