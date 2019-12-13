@@ -3,22 +3,22 @@ package starship.task2;
 public class Fibonacci {
 
     /**
-     * Find the sum of even Fibonacci numbers, below limit
+     * Find the sum of even Fibonacci numbers, below limit.
      *
      * @param limit the restriction for finding fibonacci numbers
      * @return sum of even Fibonacci numbers
      */
-    public static int findEvenSumOfEvenFibonacciNumbers(int limit) {
+    public static int findSumOfEvenFibonacciNumbers(int limit) {
         int sum = 0;
-        int f1 = 1;
-        int f2 = 2;
-        while (f1 < limit) {
-            if (f1 % 2 == 0) {
-                sum += f1;
+        int fib1 = 1;
+        int fib2 = 2;
+        while (fib1 < limit) {
+            if (fib1 % 2 == 0) {
+                sum += fib1;
             }
-            int fn = f1 + f2;
-            f1 = f2;
-            f2 = fn;
+            int fn = fib1 + fib2;
+            fib1 = fib2;
+            fib2 = fn;
         }
         return sum;
     }
