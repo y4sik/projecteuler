@@ -1,6 +1,6 @@
 package starship.task1;
 
-public class Multiple {
+public class MultipleManager {
 
     /**
      * Find the sum of all the numbers below limit, that are multiple to elements in array.
