@@ -11,10 +11,10 @@ public class MultipleManager {
      */
     public static int findSumNumbersMultipleToArrayElements(int limit, int... array) {
         int sum = 0;
-        for (int i = 1; i < limit; i++) {
+        for (int checkedNumber = 1; checkedNumber < limit; checkedNumber++) {
             for (int value : array) {
-                if (i % value == 0) {
-                    sum += i;
+                if (checkedNumber % value == 0) {
+                    sum += checkedNumber;
                     break;
                 }
             }
