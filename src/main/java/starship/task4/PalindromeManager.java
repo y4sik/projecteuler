@@ -1,6 +1,6 @@
 package starship.task4;
 
-public class Palindrome {
+public class PalindromeManager {
     /**
      * Finds the largest palindrome made by the product of two numbers, from start to end
      * A palindromic number reads the same both ways.
@@ -9,7 +9,7 @@ public class Palindrome {
      * @param end   the number at which multiplication ends
      * @return largest palindrome
      */
-    public static int maxPalindrome(int start, int end) {
+    public static int findLargestPalindrome(int start, int end) {
         int maxPalindrome = -1;
         for (int i = start; i <= end; i++) {
             for (int j = start; j <= end; j++) {
