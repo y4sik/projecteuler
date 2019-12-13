@@ -6,6 +6,6 @@ public class TaskRunner {
     private static final int NUMBER_B = 5;
 
     public static void main(String[] args) {
-        System.out.println(MultipleManager.findSumOfNumbersMultipleToArrayElements(LIMIT, NUMBER_A, NUMBER_B));
+        System.out.println(MultipleManager.findSumNumbersMultipleToArrayElements(LIMIT, NUMBER_A, NUMBER_B));
     }
 }
