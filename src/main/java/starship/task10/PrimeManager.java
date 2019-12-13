@@ -1,6 +1,7 @@
 package starship.task10;
 
-public class PrimeNumber {
+public class PrimeManager {
+
     /**
      * Find the sum of all the primes below limit
      *
@@ -16,7 +17,13 @@ public class PrimeNumber {
         }
         return sum;
     }
-
+    
+    /**
+     * Check if number is prime number
+     *
+     * @param number the number to be tested on prime
+     * @return true id number is prime
+     */
     private static boolean isPrime(int number) {
         if (number < 0) {
             throw new IllegalArgumentException("Negative number");
