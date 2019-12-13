@@ -33,9 +33,9 @@ class PrimeFactor {
      */
     private static long findSmallestPrimeFactor(long number) {
         long end = (long) Math.ceil(Math.sqrt(number));
-        for (long i = 2; i <= end; i++) {
-            if (number % i == 0) {
-                return i;
+        for (long currentNumber = 2; currentNumber <= end; currentNumber++) {
+            if (number % currentNumber == 0) {
+                return currentNumber;
             }
         }
         return number;
