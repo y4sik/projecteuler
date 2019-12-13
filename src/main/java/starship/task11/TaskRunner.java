@@ -1,5 +1,8 @@
 package starship.task11;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class TaskRunner {
     private static final int[][] ARR = {
             {8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8},
