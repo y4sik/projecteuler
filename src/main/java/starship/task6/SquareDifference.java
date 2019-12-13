@@ -3,8 +3,8 @@ package starship.task6;
 public class SquareDifference {
 
     /**
-     * Find the difference between the square of the sum of
-     * the natural numbers in range [1, limit] and the sum of the squares
+     * Find the difference between the square of the sum and
+     * the sum of the squares of the natural numbers, in range [1, limit].
      *
      * @param limit the restriction to which the square of the sum and the
      *              sum of squares is calculated
