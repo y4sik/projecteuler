@@ -8,7 +8,7 @@ public class Fibonacci {
      * @param limit the restriction for finding fibonacci numbers
      * @return sum of even Fibonacci numbers
      */
-    public static int findSumOfEvenFibonacciNumbers(int limit) {
+    public static int findSumEvenFibonacciNumbers(int limit) {
         int sum = 0;
         int fib1 = 1;
         int fib2 = 2;
