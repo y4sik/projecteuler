@@ -22,7 +22,7 @@ public class PrimeManager {
      * Check if number is prime number
      *
      * @param number the number to be tested on prime
-     * @return true id number is prime
+     * @return true if number is prime
      */
     private static boolean isPrime(int number) {
         if (number < 0) {
