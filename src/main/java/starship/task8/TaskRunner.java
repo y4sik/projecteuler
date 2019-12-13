@@ -2,7 +2,7 @@ package starship.task8;
 
 public class TaskRunner {
 
-    private static final String NUMBER = "73167176531330624919225119674426574742355349194934" +
+    private static final String NUMERIC_STRING = "73167176531330624919225119674426574742355349194934" +
             "96983520312774506326239578318016984801869478851843" +
             "85861560789112949495459501737958331952853208805511" +
             "12540698747158523863050715693290963295227443043557" +
@@ -26,6 +26,6 @@ public class TaskRunner {
     private static final int COUNT_ADJACENT_DIGITS = 13;
 
     public static void main(String[] args) {
-        System.out.println(Product.largestProductInSeries(COUNT_ADJACENT_DIGITS, NUMBER));
+        System.out.println(LargeNumberManager.largestProductInSeries(COUNT_ADJACENT_DIGITS, NUMERIC_STRING));
     }
 }
