@@ -16,9 +16,9 @@ public class Fibonacci {
             if (fib1 % 2 == 0) {
                 sum += fib1;
             }
-            int fn = fib1 + fib2;
+            int fibN = fib1 + fib2;
             fib1 = fib2;
-            fib2 = fn;
+            fib2 = fibN;
         }
         return sum;
     }
