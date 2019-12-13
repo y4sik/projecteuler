@@ -1,15 +1,20 @@
 package starship.task7;
 
-public class PrimeNumber {
+public class PrimeManager {
+
     /**
-     * Finds nth prime number
-     * @param n number on which a prime number is located
-     * @return nth prime number
+     * Finds n-th prime number (n > 0).
+     *
+     * @param ordinalNumber the ordinal number on which the prime number is searched
+     * @return n-th prime number
      */
-    public static int firstPrime(int n) {
+    public static int findOrdinalNumberOfPrime(int ordinalNumber) {
+        if (ordinalNumber < 0) {
+            throw new IllegalArgumentException("Negative ordinal number");
+        }
         int count = 0;
         int i = 0;
-        while (count < n) {
+        while (count < ordinalNumber) {
             i++;
             if (isPrime(i)) {
                 count += 1;
@@ -18,6 +23,12 @@ public class PrimeNumber {
         return i;
     }
 
+    /**
+     * Check if number is prime number
+     *
+     * @param number the number to be tested on prime
+     * @return true if number is prime
+     */
     private static boolean isPrime(int number) {
         if (number < 0) {
             throw new IllegalArgumentException("Negative number");
