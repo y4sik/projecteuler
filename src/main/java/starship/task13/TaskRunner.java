@@ -1,9 +1,7 @@
 package starship.task13;
 
-import starship.task1.Task1;
-
 public class TaskRunner {
-    private static final String[] NUMBERS = {
+    private static final String[] LARGE_NUMBER = {
             "37107287533902102798797998220837590246510135740250",
             "46376937677490009712648124896970078050417018260538",
             "74324986199524741059474233309513058123726617309629",
@@ -106,7 +104,9 @@ public class TaskRunner {
             "53503534226472524250874054075591789781264330331690",
     };
 
+    private static final int COUNT_DIGITS = 10;
+
     public static void main(String[] args) {
-        System.out.println(Task13.findLargeSum(NUMBERS));
+        System.out.println(LargeAdder.getFirstDigitsOfNumbersSum(LARGE_NUMBER, COUNT_DIGITS));
     }
 }
