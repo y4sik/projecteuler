@@ -6,6 +6,6 @@ public class TaskRunner {
     private static final int MAX_THREE_DIGIT_NUMBER = 999;
 
     public static void main(String[] args) {
-        System.out.println(PalindromeManager.findLargestPalindrome(MIN_THREE_DIGIT_NUMBER, MAX_THREE_DIGIT_NUMBER));
+        System.out.println(PalindromeManager.findLargestPalindromeOfNumbersProduct(MIN_THREE_DIGIT_NUMBER, MAX_THREE_DIGIT_NUMBER));
     }
 }

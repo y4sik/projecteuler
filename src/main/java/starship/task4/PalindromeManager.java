@@ -9,11 +9,11 @@ public class PalindromeManager {
      * @param end   the number at which multiplication ends
      * @return largest palindrome
      */
-    public static int findLargestPalindrome(int start, int end) {
+    public static int findLargestPalindromeOfNumbersProduct(int start, int end) {
         int maxPalindrome = -1;
-        for (int i = start; i <= end; i++) {
-            for (int j = start; j <= end; j++) {
-                int product = i * j;
+        for (int currentNumber1 = start; currentNumber1 <= end; currentNumber1++) {
+            for (int currentNumber2 = start; currentNumber2 <= end; currentNumber2++) {
+                int product = currentNumber1 * currentNumber2;
                 if (isPalindrome(Integer.toString(product)) && product > maxPalindrome)
                     maxPalindrome = product;
             }
