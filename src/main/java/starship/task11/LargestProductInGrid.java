@@ -1,5 +1,8 @@
 package starship.task11;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class LargestProductInGrid {
 
     /**
@@ -10,16 +13,16 @@ public class LargestProductInGrid {
      * @return the greatest product of adjacent n numbers
      */
     public static int findLargestProductInGrid(int[][] array, int countElementsForProduct) {
-        int max = -1;
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                max = Math.max(downProduct(i, j, countElementsForProduct, array), max);
-                max = Math.max(rightProduct(i, j, countElementsForProduct, array), max);
-                max = Math.max(diagonalToRightProduct(i, j, countElementsForProduct, array), max);
-                max = Math.max(diagonalToLeftProduct(i, j, countElementsForProduct, array), max);
+        int maxProductArrayElements = -1;
+        for (int rowIndex = 0; rowIndex < array.length; rowIndex++) {
+            for (int columnIndex = 0; columnIndex < array[rowIndex].length; columnIndex++) {
+                maxProductArrayElements = Math.max(downProduct(rowIndex, columnIndex, countElementsForProduct, array), maxProductArrayElements);
+                maxProductArrayElements = Math.max(rightProduct(rowIndex, columnIndex, countElementsForProduct, array), maxProductArrayElements);
+                maxProductArrayElements = Math.max(diagonalToRightProduct(rowIndex, columnIndex, countElementsForProduct, array), maxProductArrayElements);
+                maxProductArrayElements = Math.max(diagonalToLeftProduct(rowIndex, columnIndex, countElementsForProduct, array), maxProductArrayElements);
             }
         }
-        return max;
+        return maxProductArrayElements;
     }
 
     /**
@@ -44,13 +47,14 @@ public class LargestProductInGrid {
      * @return product of [countElementsForProduct] elements vertically down
      */
     private static int downProduct(int rowIndex, int columnIndex, int countElementsForProduct, int[][] array) {
-        if (isIndexOfElementInArrayBoundaries(rowIndex + (countElementsForProduct - 1), columnIndex, array))
+        int rowIndexWithOffset = rowIndex + (countElementsForProduct - 1);
+        if (isIndexOfElementInArrayBoundaries(rowIndexWithOffset, columnIndex, array))
             return -1;
-        int product = 1;
+        int productArrayElements = 1;
         for (int offset = 0; offset < countElementsForProduct; offset++) {
-            product *= array[rowIndex + offset][columnIndex];
+            productArrayElements *= array[rowIndex + offset][columnIndex];
         }
-        return product;
+        return productArrayElements;
     }
 
     /**
@@ -63,13 +67,14 @@ public class LargestProductInGrid {
      * @return product of [countElementsForProduct] elements horizontally right
      */
     private static int rightProduct(int rowIndex, int columnIndex, int countElementsForProduct, int[][] array) {
-        if (isIndexOfElementInArrayBoundaries(rowIndex, columnIndex + (countElementsForProduct - 1), array))
+        int columnIndexWithOffset = columnIndex + (countElementsForProduct - 1);
+        if (isIndexOfElementInArrayBoundaries(rowIndex, columnIndexWithOffset, array))
             return -1;
-        int product = 1;
+        int productArrayElements = 1;
         for (int offset = 0; offset < countElementsForProduct; offset++) {
-            product *= array[rowIndex][columnIndex + offset];
+            productArrayElements *= array[rowIndex][columnIndex + offset];
         }
-        return product;
+        return productArrayElements;
     }
 
     /**
@@ -82,14 +87,16 @@ public class LargestProductInGrid {
      * @return product of [countElementsForProduct] elements diagonally to the right
      */
     private static int diagonalToRightProduct(int rowIndex, int columnIndex, int countElementsForProduct, int[][] array) {
-        if (isIndexOfElementInArrayBoundaries(rowIndex + (countElementsForProduct - 1),
-                columnIndex + (countElementsForProduct - 1), array))
+        int rowIndexWithOffset = rowIndex + (countElementsForProduct - 1);
+        int columnIndexWithOffset = columnIndex + (countElementsForProduct - 1);
+        if (isIndexOfElementInArrayBoundaries(rowIndexWithOffset, columnIndexWithOffset, array)) {
             return -1;
-        int product = 1;
-        for (int offset = 0; offset < countElementsForProduct; offset++) {
-            product *= array[rowIndex + offset][columnIndex + offset];
         }
-        return product;
+        int productArrayElements = 1;
+        for (int offset = 0; offset < countElementsForProduct; offset++) {
+            productArrayElements *= array[rowIndex + offset][columnIndex + offset];
+        }
+        return productArrayElements;
     }
 
     /**
@@ -102,13 +109,16 @@ public class LargestProductInGrid {
      * @return product of [countElementsForProduct] elements diagonally to the left
      */
     private static int diagonalToLeftProduct(int rowIndex, int columnIndex, int countElementsForProduct, int[][] array) {
-        if (isIndexOfElementInArrayBoundaries(rowIndex + (countElementsForProduct - 1),
-                columnIndex - (countElementsForProduct - 1), array))
+        int rowIndexWithOffset = rowIndex + (countElementsForProduct - 1);
+        int columnIndexWithOffset = columnIndex - (countElementsForProduct - 1);
+        if (isIndexOfElementInArrayBoundaries(rowIndexWithOffset, columnIndexWithOffset, array)) {
             return -1;
-        int product = 1;
-        for (int offset = 0; offset < countElementsForProduct; offset++) {
-            product *= array[rowIndex + offset][columnIndex - offset];
         }
-        return product;
+
+        int productArrayElements = 1;
+        for (int offset = 0; offset < countElementsForProduct; offset++) {
+            productArrayElements *= array[rowIndex + offset][columnIndex - offset];
+        }
+        return productArrayElements;
     }
 }
