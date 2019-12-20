@@ -12,10 +12,10 @@ public class LargeNumberManager {
      */
     public static long largestProductInSeries(int countAdjacentDigits, String numericString) {
         long maxProduct = 1;
-        for (int i = 0; i < numericString.length() - countAdjacentDigits; i++) {
+        for (int rowIndex = 0; rowIndex < numericString.length() - countAdjacentDigits; rowIndex++) {
             long currentProduct = 1;
-            for (int j = i; j < i + countAdjacentDigits; j++) {
-                currentProduct *= Character.getNumericValue(numericString.charAt(j));
+            for (int columnIndex = rowIndex; columnIndex < rowIndex + countAdjacentDigits; columnIndex++) {
+                currentProduct *= Character.getNumericValue(numericString.charAt(columnIndex));
             }
             maxProduct = Math.max(maxProduct, currentProduct);
         }
