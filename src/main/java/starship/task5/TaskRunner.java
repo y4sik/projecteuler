@@ -6,6 +6,6 @@ public class TaskRunner {
     private static final int TO = 20;
 
     public static void main(String[] args) {
-        System.out.println(Multiple.findSmallestMultiple(FROM, TO));
+        System.out.println(Multiple.findSmallestNumberDividedByNumbersInRange(FROM, TO));
     }
 }

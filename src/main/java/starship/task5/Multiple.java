@@ -10,41 +10,38 @@ public class Multiple {
      * @param to   the number at which the multiplicity test ends
      * @return smallest multiple
      */
-    public static long findSmallestMultiple(int from, int to) {
-        long lcm = 1;
-        for (int i = from; i <= to; i++) {
-            lcm = leastCommonMultiple(i, lcm);
-            System.out.println(lcm);
+    public static long findSmallestNumberDividedByNumbersInRange(int from, int to) {
+        long leastCommonMultiple = 1;
+        for (int number = from; number <= to; number++) {
+            leastCommonMultiple = findLeastCommonMultiple(number, leastCommonMultiple);
         }
-        return lcm;
+        return leastCommonMultiple;
     }
 
     /**
      * Find the least common multiple of two numbers.
      *
-     * @param a value with which the LCM is to be computed
-     * @param b value with which the LCM is to be computed
+     * @param number1 value with which the LCM is to be computed
+     * @param number2 value with which the LCM is to be computed
      * @return the least common multiple of numbers a and b
      */
-    private static long leastCommonMultiple(long a, long b) {
-        return a * b / greatestCommonDivisor(a, b);
+    private static long findLeastCommonMultiple(long number1, long number2) {
+        return number1 * number2 / findGreatestCommonDivisor(number1, number2);
     }
 
     /**
      * Find the greatest common divisor of two numbers.
      *
-     * @param a value with which the GCD is to be computed
-     * @param b value with which the GCD is to be computed
+     * @param number1 value with which the GCD is to be computed
+     * @param number2 value with which the GCD is to be computed
      * @return greatest common divisor of numbers a and b
      */
-    private static long greatestCommonDivisor(long a, long b) {
-        if (a < 0 || b < 0)
-            throw new IllegalArgumentException("Negative number");
-        while (b != 0) {
-            long c = a % b;
-            a = b;
-            b = c;
+    private static long findGreatestCommonDivisor(long number1, long number2) {
+        while (number2 != 0) {
+            long number3 = number1 % number2;
+            number1 = number2;
+            number2 = number3;
         }
-        return a;
+        return number1;
     }
 }
