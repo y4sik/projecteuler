@@ -24,9 +24,9 @@ public class TaskRunner {
             {1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48},
     };
 
-    private static final int COUNT_NUMBERS_FOR_PRODUCT = 4;
+    private static final int COUNT_ARRAY_ELEMENTS_FOR_PRODUCT = 4;
 
     public static void main(String[] args) {
-        System.out.println(LargestProductInGrid.findLargestProductInGrid(ARRAY, COUNT_NUMBERS_FOR_PRODUCT));
+        System.out.println(LargestProductInGrid.findLargestProductAdjacentElementsInGrid(ARRAY, COUNT_ARRAY_ELEMENTS_FOR_PRODUCT));
     }
 }
