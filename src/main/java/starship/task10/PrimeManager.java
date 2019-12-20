@@ -5,17 +5,17 @@ public class PrimeManager {
     /**
      * Find the sum of all the primes below limit
      *
-     * @param limit the number to which prime numbers must be found
+     * @param limitFindingPrimes the number to which prime numbers must be found
      * @return sum of primes below limit
      */
-    public static long findSumPrimes(int limit) {
-        long sum = 0;
-        for (int index = 0; index < limit; index++) {
-            if (isPrime(index)) {
-                sum += index;
+    public static long findSumPrimes(int limitFindingPrimes) {
+        long sumPrimes = 0;
+        for (int number = 0; number < limitFindingPrimes; number++) {
+            if (isPrime(number)) {
+                sumPrimes += number;
             }
         }
-        return sum;
+        return sumPrimes;
     }
 
     /**
@@ -31,9 +31,9 @@ public class PrimeManager {
         if (number < 0 || number == 1 || number % 2 == 0) {
             return false;
         }
-        int end = (int) Math.ceil(Math.sqrt(number));
-        for (int index = 3; index <= end; index += 2) {
-            if (number % index == 0)
+        int lastDivisor = (int) Math.ceil(Math.sqrt(number));
+        for (int divisor = 3; divisor <= lastDivisor; divisor += 2) {
+            if (number % divisor == 0)
                 return false;
         }
         return true;
