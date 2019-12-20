@@ -38,9 +38,9 @@ public class Multiple {
      */
     private static long findGreatestCommonDivisor(long number1, long number2) {
         while (number2 != 0) {
-            long number3 = number1 % number2;
+            long divisionRemainder = number1 % number2;
             number1 = number2;
-            number2 = number3;
+            number2 = divisionRemainder;
         }
         return number1;
     }
