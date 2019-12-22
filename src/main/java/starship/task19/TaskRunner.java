@@ -2,7 +2,6 @@ package starship.task19;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.Month;
 
 public class TaskRunner {
 
@@ -12,6 +11,6 @@ public class TaskRunner {
     private static final DayOfWeek WEEK_DAY = DayOfWeek.SUNDAY;
 
     public static void main(String[] args) {
-        System.out.println(SundayCounter.countSundays(START_DATE, END_DATE, MONTH_DAY, WEEK_DAY));
+        System.out.println(DateCounter.countSundays(START_DATE, END_DATE, MONTH_DAY, WEEK_DAY));
     }
 }

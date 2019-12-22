@@ -2,9 +2,8 @@ package starship.task19;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.Month;
 
-public class SundayCounter {
+public class DateCounter {
     /**
      * Find the number of [weekDay] that fell on the [monthDay] in range [startDate, endDate]
      *
