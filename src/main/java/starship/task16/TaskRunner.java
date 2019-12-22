@@ -6,6 +6,6 @@ public class TaskRunner {
     private static final int DEGREE = 1000;
 
     public static void main(String[] args) {
-        System.out.println(DigitSum.findDigitSum(NUMBER, DEGREE));
+        System.out.println(DigitSum.findDigitSumNumberInDegree(NUMBER, DEGREE));
     }
 }
