@@ -9,19 +9,25 @@ public class LatticePath {
      * If the set has n elements, the number of k-combinations is equal to
      * the binomial coefficient.
      *
-     * @param n n=2k
-     * @param k grid size, k ≥ 0
-     * @return count of routes in a grid {k,k} size.
+     * @param countGridCells countGridElements = gridSize * gridSize
+     * @param gridSize the grid size
+     * @return count of routes in a grid
      */
-    public static BigInteger findQuantityOfRoutes(int n, int k) {
-        return factorial(n).divide(factorial(k).multiply(factorial(n - k)));
+    public static BigInteger findCountGridPaths(int countGridCells, int gridSize) {
+        return factorial(countGridCells).divide(factorial(gridSize).multiply(factorial(countGridCells - gridSize)));
     }
 
-    private static BigInteger factorial(int n) {
-        BigInteger result = BigInteger.ONE;
-        for (int i = 2; i <= n; i++)
-            result = result.multiply(BigInteger.valueOf(i));
-        return result;
+    /**
+     * Finds the factorial of a number.
+     *
+     * @param number the number for which factorial is calculated
+     * @return factorial of number
+     */
+    private static BigInteger factorial(int number) {
+        BigInteger factorial = BigInteger.ONE;
+        for (int sequencNumber = 2; sequencNumber <= number; sequencNumber++)
+            factorial = factorial.multiply(BigInteger.valueOf(sequencNumber));
+        return factorial;
     }
 
 }
