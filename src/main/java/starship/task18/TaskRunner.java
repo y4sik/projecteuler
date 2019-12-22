@@ -2,7 +2,7 @@ package starship.task18;
 
 public class TaskRunner {
 
-    private static final int[][] TRIANGLE = {
+    private static final int[][] TRIANGLE_ARRAY = {
             {75},
             {95, 64},
             {17, 47, 82},
@@ -21,6 +21,6 @@ public class TaskRunner {
     };
 
     public static void main(String[] args) {
-        System.out.println(MaxPath.maxSumFromTopToBottom(TRIANGLE));
+        System.out.println(MaxPath.maxSumFromTopToBottom(TRIANGLE_ARRAY));
     }
 }
