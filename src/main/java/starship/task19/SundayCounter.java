@@ -1,25 +1,29 @@
 package starship.task19;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.Month;
 
 public class SundayCounter {
     /**
-     * Find Sundays fell on the first of the month in range [from, to]
+     * Find the number of [weekDay] that fell on the [monthDay] in range [startDate, endDate]
      *
-     * @param from year from which the count begins
-     * @param to   year on which the count ends
-     * @return the number of Sundays that fell on the first of the month in range [from, to]
+     * @param startDate year from which the count begins
+     * @param endDate   year on which the count ends
+     * @param monthDay  day of the month on which the day of the week falls
+     * @param weekDay   day of the week that falls on the day of the month
+     * @return the number of [weekDay] that fell on the [monthDay] in range [startDate, endDate]
      */
-    public static int countSundays(LocalDate from, LocalDate to) {
-        int day = 1;
-        int count = 0;
-        for (int i = from.getYear(); i < to.getYear(); i++) {
-            for (int j = 1; j <= 12; j++) {
-                if (LocalDate.of(i, j, day).getDayOfWeek().getValue() == 1) {
-                    count++;
+    public static int countSundays(LocalDate startDate, LocalDate endDate, int monthDay, DayOfWeek weekDay) {
+        int numberMatchedDays = 0;
+        for (int currentYear = startDate.getYear(); currentYear <= endDate.getYear(); currentYear++) {
+            for (int currentMonth = 1; currentMonth <= 12; currentMonth++) {
+                if (LocalDate.of(currentYear, currentMonth, monthDay).getDayOfWeek().getValue()
+                        == weekDay.getValue()) {
+                    numberMatchedDays++;
                 }
             }
         }
-        return count;
+        return numberMatchedDays;
     }
 }
