@@ -25,7 +25,14 @@ public class AmicableFinder {
     }
 
     /**
+     * <p>
      * Check if number is amicable.
+     * </p>
+     * Let d(n) be defined as the sum of proper divisors of
+     * n (numbers less than n which divide evenly into n).
+     * If d(a) = b and d(b) = a, where a ≠ b, then a and b
+     * are an amicable pair and each of a and b are called
+     * amicable numbers.
      *
      * @param number the number to check for amicability
      * @return true if number is amicable
@@ -45,10 +52,11 @@ public class AmicableFinder {
      * @return sum of dividers
      */
     private static int findDividersSum(int number) {
-        int dividersSum = 0;
-        for (int divider = 1; divider < number; divider++) {
+        int dividersSum = 1;
+        int lastDivisor = (int) Math.ceil(Math.sqrt(number));
+        for (int divider = 2; divider <= lastDivisor; divider++) {
             if (number % divider == 0) {
-                dividersSum += divider;
+                dividersSum += divider + number / divider;
             }
         }
         return dividersSum;
