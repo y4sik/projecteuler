@@ -45,7 +45,7 @@ public class AmicableFinder {
      * @param number the number to check for amicability
      * @return true if number is amicable
      */
-    public static boolean isAmicable(int number) {
+    private static boolean isAmicable(int number) {
         int dividersSum = findDividersSum(number);
         if (number != dividersSum) {
             return number == findDividersSum(dividersSum);
@@ -59,7 +59,7 @@ public class AmicableFinder {
      * @param number the number for which the divisors are found
      * @return sum of dividers
      */
-    public static int findDividersSum(int number) {
+    private static int findDividersSum(int number) {
         HashSet<Integer> dividers = new HashSet<>();
         dividers.add(1);
         for (int divider = 2; divider <= Math.sqrt(number); divider++) {
