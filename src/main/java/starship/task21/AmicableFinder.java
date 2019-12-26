@@ -1,5 +1,7 @@
 package starship.task21;
 
+import java.util.HashSet;
+
 public class AmicableFinder {
     /**
      * <p>
@@ -16,7 +18,7 @@ public class AmicableFinder {
      */
     public static int sumOfAmicable(int maxNumber) {
         int sumAmicableNumbers = 0;
-        for (int number = 0; number < maxNumber; number++) {
+        for (int number = 1; number < maxNumber; number++) {
             if (isAmicable(number)) {
                 sumAmicableNumbers += number;
             }
@@ -43,7 +45,7 @@ public class AmicableFinder {
      * @param number the number to check for amicability
      * @return true if number is amicable
      */
-    private static boolean isAmicable(int number) {
+    public static boolean isAmicable(int number) {
         int dividersSum = findDividersSum(number);
         if (number != dividersSum) {
             return number == findDividersSum(dividersSum);
@@ -57,14 +59,15 @@ public class AmicableFinder {
      * @param number the number for which the divisors are found
      * @return sum of dividers
      */
-    private static int findDividersSum(int number) {
-        int dividersSum = 1;
-        int lastDivisor = (int) Math.ceil(Math.sqrt(number));
-        for (int divider = 2; divider <= lastDivisor; divider++) {
+    public static int findDividersSum(int number) {
+        HashSet<Integer> dividers = new HashSet<>();
+        dividers.add(1);
+        for (int divider = 2; divider <= Math.sqrt(number); divider++) {
             if (number % divider == 0) {
-                dividersSum += divider + number / divider;
+                dividers.add(divider);
+                dividers.add(number / divider);
             }
         }
-        return dividersSum;
+        return dividers.stream().reduce(Integer::sum).get();
     }
 }
