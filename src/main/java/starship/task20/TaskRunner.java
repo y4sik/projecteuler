@@ -6,5 +6,6 @@ public class TaskRunner {
 
     public static void main(String[] args) {
         System.out.println(Factorial.findDigitsSumFromNumberFactorial(NUMBER));
+
     }
 }
