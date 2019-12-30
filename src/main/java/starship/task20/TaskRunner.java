@@ -9,23 +9,22 @@ public class TaskRunner {
     private static final int ITERATIONS_COUNT = 50;
 
     public static void main(String[] args) {
-
         FactorialFinder factorialFinder = new FactorialFinder();
         int number;
         do {
             Scanner in = new Scanner(System.in);
             System.out.print("Input a number: ");
             number = in.nextInt();
-
+            if (number < 0) {
+                break;
+            }
             System.out.println(String.format("Sum digits of factorial: %d", factorialFinder.findDigitsSumFromNumberFactorial(number)));
             System.out.println("Cache: " + factorialFinder.getNumbersFactorialCache());
 
-        } while (number > 0);
-
-
+        } while (true);
     }
 
-    public static void showAlgorithmSpeed(){
+    public static void showAlgorithmRunningTime() {
         long totalAlgorithmRunningTime = 0;
 
         for (int algorithmExecution = 0; algorithmExecution < ITERATIONS_COUNT; algorithmExecution++) {
