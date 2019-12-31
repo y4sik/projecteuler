@@ -29,18 +29,21 @@ public class PrimeManager {
     private static boolean isPrime(int number) {
         if (number == 0 || number == 1) {
             return false;
-        } else if (number == 2) {
-            return true;
-        } else {
-            if (number % 2 == 0) {
-                return false;
-            }
-            int lastDivisor = (int) Math.ceil(Math.sqrt(number));
-            for (int divisor = 3; divisor <= lastDivisor; divisor += 2) {
-                if (number % divisor == 0)
-                    return false;
-            }
+        }
+
+        if (number == 2) {
             return true;
         }
+
+        if (number % 2 == 0) {
+            return false;
+        }
+
+        int lastDivisor = (int) Math.ceil(Math.sqrt(number));
+        for (int divisor = 3; divisor <= lastDivisor; divisor += 2) {
+            if (number % divisor == 0)
+                return false;
+        }
+        return true;
     }
 }
