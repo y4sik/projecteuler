@@ -25,6 +25,17 @@ public class TaskRunner {
 
     private static final int COUNT_ADJACENT_DIGITS = 13;
 
+    /**
+     * The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.
+     * <p>
+     * 73167176531330624919225119674426574742355349194934
+     * 96983520312774506326239578318016984801869478851843
+     * ....
+     * 71636269561882670428252483600823257530420752963450
+     * <p>
+     * Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
+     */
+
     public static void main(String[] args) {
         System.out.println(LargeNumberManager.largestProductInSeries(COUNT_ADJACENT_DIGITS, NUMERIC_STRING));
     }
