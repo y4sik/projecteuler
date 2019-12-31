@@ -1,14 +1,22 @@
 package starship.task20;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Scanner;
 
 public class TaskRunner {
+
+    private static final Logger LOGGER = LogManager.getLogger(TaskRunner.class);
 
     private static final int MAX_NUMBER = 1000;
 
     private static final int ITERATIONS_COUNT = 50;
 
     public static void main(String[] args) {
+
+        showAlgorithmRunningTime();
+
         FactorialFinder factorialFinder = new FactorialFinder();
         int number;
         do {
@@ -20,7 +28,6 @@ public class TaskRunner {
             }
             System.out.println(String.format("Sum digits of factorial: %d", factorialFinder.findDigitsSumFromNumberFactorial(number)));
             System.out.println("Cache: " + factorialFinder.getNumbersFactorialCache());
-
         } while (true);
     }
 
@@ -38,8 +45,8 @@ public class TaskRunner {
             totalAlgorithmRunningTime += algorithmEndTime - algorithmStartTime;
         }
         long averageAlgorithmRunningTime = totalAlgorithmRunningTime / ITERATIONS_COUNT;
-        System.out.println(String.format("Nanoseconds: %d", averageAlgorithmRunningTime));
-        System.out.println(String.format("Milliseconds: %d", averageAlgorithmRunningTime / 1_000_000));
+        LOGGER.info(String.format("Nanoseconds: %d", averageAlgorithmRunningTime));
+        LOGGER.info(String.format("Milliseconds: %d", averageAlgorithmRunningTime / 1_000_000));
     }
 
     public static int getRandomNumber(int min, int max) {
