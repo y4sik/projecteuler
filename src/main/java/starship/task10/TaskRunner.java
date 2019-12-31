@@ -1,8 +1,5 @@
 package starship.task10;
 
-import java.util.ArrayList;
-import java.util.Set;
-
 public class TaskRunner {
     private static final int LIMIT_FINDING_PRIMES = 2_000_000;
 
