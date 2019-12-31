@@ -10,7 +10,7 @@ public class PythagoreanTriplet {
      *               where c^2 = a^2 + b^2
      * @return product of Pythagorean triplet or -1 if does not exist
      */
-    public static int findPythagoreanTripletProduct(int number) {
+    public static Integer findPythagoreanTripletProduct(int number) {
         for (int numberA = 1; numberA < number; numberA++) {
             for (int numberB = numberA + 1; numberB < number; numberB++) {
                 int numberC = number - (numberA + numberB);
@@ -19,6 +19,6 @@ public class PythagoreanTriplet {
                 }
             }
         }
-        return -1;
+        return null;
     }
 }
