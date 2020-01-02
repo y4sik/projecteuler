@@ -12,22 +12,16 @@ import static org.junit.jupiter.api.Assertions.*;
 class PrimeManagerTest {
 
     private static HashMap<Integer, Integer> ordinalPrimeMap = new HashMap<>();
-    private static int[] testNumbers = new int[6];
+    private static int[] testNumbers;
 
     @BeforeAll
     static void setUp() {
-        ordinalPrimeMap.put(1, 2);
-        ordinalPrimeMap.put(3, 5);
-        ordinalPrimeMap.put(5, 11);
-        ordinalPrimeMap.put(0, 0);
-        testNumbers[0] = 1;
-        testNumbers[1] = 3;
-        testNumbers[2] = 5;
-        testNumbers[3] = 0;
-        testNumbers[4] = -1;
-        testNumbers[5] = -5;
+        testNumbers = new int[]{1, 3, 5, 0, -1, -5};
+        ordinalPrimeMap.put(testNumbers[0], 2);
+        ordinalPrimeMap.put(testNumbers[1], 5);
+        ordinalPrimeMap.put(testNumbers[2], 11);
+        ordinalPrimeMap.put(testNumbers[3], 0);
     }
-
 
     @Test
     void findPrimeByOrdinalNumber() {
