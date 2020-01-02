@@ -11,8 +11,8 @@ public class LargeNumberManager {
      * @return largest product
      */
     public static long largestProductInSeries(int countAdjacentDigits, String numericString) {
-        long maxProduct = 1;
-        for (int rowIndex = 0; rowIndex < numericString.length() - countAdjacentDigits; rowIndex++) {
+        long maxProduct = 0;
+        for (int rowIndex = 0; rowIndex <= numericString.length() - countAdjacentDigits; rowIndex++) {
             long currentProduct = 1;
             for (int columnIndex = rowIndex; columnIndex < rowIndex + countAdjacentDigits; columnIndex++) {
                 currentProduct *= Character.getNumericValue(numericString.charAt(columnIndex));
