@@ -14,12 +14,7 @@ class PythagoreanTripletTest {
 
     @BeforeAll
     static void setUp() {
-        testNumbers[0] = 1000;
-        testNumbers[1] = 10_000;
-        testNumbers[2] = 100;
-        testNumbers[3] = 25;
-        testNumbers[4] = -1;
-        testNumbers[5] = -5;
+        testNumbers = new int[]{1000, 10_000, 100, 25, -1, -5};
         pythagoreanTripletMap.put(testNumbers[0], 31875000);
         pythagoreanTripletMap.put(testNumbers[1], 1810228928);
         pythagoreanTripletMap.put(testNumbers[2], null);
