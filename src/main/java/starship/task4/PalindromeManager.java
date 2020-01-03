@@ -9,7 +9,11 @@ public class PalindromeManager {
      * @param end   the number at which multiplication ends
      * @return largest palindrome
      */
-    public static int findLargestPalindromeOfNumbersProduct(int start, int end) {
+    public static Integer findLargestPalindromeOfNumbersProduct(int start, int end) {
+        if (start < 0 || end <= start) {
+            throw new IllegalArgumentException("Start must be greatest than 0 (start > 0)," +
+                    " and must be greatest than start (end > start)");
+        }
         int maxPalindrome = -1;
         for (int currentNumber1 = start; currentNumber1 <= end; currentNumber1++) {
             for (int currentNumber2 = start; currentNumber2 <= end; currentNumber2++) {
@@ -18,7 +22,7 @@ public class PalindromeManager {
                     maxPalindrome = product;
             }
         }
-        return maxPalindrome;
+        return maxPalindrome == -1 ? null : maxPalindrome;
     }
 
     private static boolean isPalindrome(String str) {
