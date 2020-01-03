@@ -27,7 +27,6 @@ public class LargeNumberManagerTest {
                 "letters",
                 ""
         };
-
         data.add(new LargeNumberManagerData(2, numericString[0], 20));
         data.add(new LargeNumberManagerData(3, numericString[1], 60));
         data.add(new LargeNumberManagerData(2, numericString[2], 0));
@@ -85,15 +84,14 @@ public class LargeNumberManagerTest {
 
     @Test(expectedExceptions = NumberFormatException.class)
     public void testLargestProductInSeriesNotNumericString() {
-        LargeNumberManager.largestProductInSeries(getRandomNumber(1, numericString[6].length()), numericString[6]);
-        LargeNumberManager.largestProductInSeries(getRandomNumber(1, numericString[7].length()), numericString[7]);
-        LargeNumberManager.largestProductInSeries(getRandomNumber(1, numericString[8].length()), numericString[8]);
-        LargeNumberManager.largestProductInSeries(getRandomNumber(1, numericString[9].length()), numericString[9]);
-        LargeNumberManager.largestProductInSeries(getRandomNumber(1, numericString[10].length()), numericString[10]);
+        LargeNumberManager.largestProductInSeries(getRandomNumber(1, numericString[6].length() - 1), numericString[6]);
+        LargeNumberManager.largestProductInSeries(getRandomNumber(1, numericString[7].length() - 1), numericString[7]);
+        LargeNumberManager.largestProductInSeries(getRandomNumber(1, numericString[8].length() - 1), numericString[8]);
+        LargeNumberManager.largestProductInSeries(getRandomNumber(1, numericString[9].length() - 1), numericString[9]);
+        LargeNumberManager.largestProductInSeries(getRandomNumber(1, numericString[10].length() - 1), numericString[10]);
     }
 
     private int getRandomNumber(int min, int max) {
         return (int) ((Math.random() * ((max - min) + 1)) + min);
     }
-
 }
