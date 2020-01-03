@@ -11,6 +11,9 @@ public class PythagoreanTriplet {
      * @return product of Pythagorean triplet or -1 if does not exist
      */
     public static Integer findPythagoreanTripletProduct(int number) {
+        if (number < 0) {
+            throw new IllegalArgumentException("The number must be greatest than zero.");
+        }
         for (int numberA = 1; numberA < number; numberA++) {
             for (int numberB = numberA + 1; numberB < number; numberB++) {
                 int numberC = number - (numberA + numberB);
