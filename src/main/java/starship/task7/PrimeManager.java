@@ -9,6 +9,9 @@ public class PrimeManager {
      * @return n-th prime number
      */
     public static int findPrimeByOrdinalNumber(int ordinalPrimeNumber) {
+        if (ordinalPrimeNumber < 0) {
+            throw new IllegalArgumentException("The ordinal number must be greatest than zero.");
+        }
         int currentOrdinalPrimeNumber = 0;
         int number = 0;
         while (currentOrdinalPrimeNumber < ordinalPrimeNumber) {
