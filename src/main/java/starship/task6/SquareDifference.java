@@ -10,13 +10,13 @@ public class SquareDifference {
      *                      sum of squares is calculated
      * @return difference between the square of the sum and the sum of the squares
      */
-    public static int findDifferenceBetweenSquaresSumAndSumSquare(int sequenceLimit) {
-        int sumSquare = 0;
-        int squaresSum = 0;
+    public static int findDifferenceBetweenSquareSumAndSumSquares(int sequenceLimit) {
+        int sumSquares = 0;
+        int numbersSum = 0;
         for (int number = 1; number <= sequenceLimit; number++) {
-            sumSquare += number * number;
-            squaresSum += number;
+            sumSquares += number * number;
+            numbersSum += number;
         }
-        return squaresSum * squaresSum - sumSquare;
+        return numbersSum * numbersSum - sumSquares;
     }
 }
