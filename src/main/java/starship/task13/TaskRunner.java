@@ -106,6 +106,14 @@ public class TaskRunner {
 
     private static final int COUNT_DIGITS = 10;
 
+    /**
+     * Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.
+     * <p>
+     * 37107287533902102798797998220837590246510135740250
+     * 46376937677490009712648124896970078050417018260538
+     * ...
+     * 53503534226472524250874054075591789781264330331690
+     */
     public static void main(String[] args) {
         System.out.println(LargeAdder.getFirstDigitsOfNumbersSum(LARGE_NUMBER, COUNT_DIGITS));
     }
