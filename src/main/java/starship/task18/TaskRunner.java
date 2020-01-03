@@ -20,6 +20,24 @@ public class TaskRunner {
             {4, 62, 98, 27, 23, 9, 70, 98, 73, 93, 38, 53, 60, 4, 23},
     };
 
+    /**
+     * By starting at the top of the triangle below and moving to adjacent
+     * numbers on the row below, the maximum total from top to bottom is 23.
+     * <p>
+     * 3
+     * 7 4
+     * 2 4 6
+     * 8 5 9 3
+     * <p>
+     * That is, 3 + 7 + 4 + 9 = 23.
+     * <p>
+     * Find the maximum total from top to bottom of the triangle below:
+     * <p>
+     * 75
+     * 95 64
+     * ...
+     * 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23
+     */
     public static void main(String[] args) {
         System.out.println(MaxPath.maxSumFromTopToBottom(TRIANGLE_ARRAY));
     }
