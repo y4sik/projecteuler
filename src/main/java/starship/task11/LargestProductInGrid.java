@@ -1,7 +1,5 @@
 package starship.task11;
 
-
-
 public class LargestProductInGrid {
 
     /**
@@ -48,7 +46,7 @@ public class LargestProductInGrid {
     private static int downProduct(int rowIndex, int columnIndex, int countElementsForProduct, int[][] array) {
         int rowIndexWithOffset = rowIndex + (countElementsForProduct - 1);
         if (isIndexOfElementInArrayBoundaries(rowIndexWithOffset, columnIndex, array))
-            return -1;
+            return 0;
         int productArrayElements = 1;
         for (int offset = 0; offset < countElementsForProduct; offset++) {
             productArrayElements *= array[rowIndex + offset][columnIndex];
@@ -68,7 +66,7 @@ public class LargestProductInGrid {
     private static int rightProduct(int rowIndex, int columnIndex, int countElementsForProduct, int[][] array) {
         int columnIndexWithOffset = columnIndex + (countElementsForProduct - 1);
         if (isIndexOfElementInArrayBoundaries(rowIndex, columnIndexWithOffset, array))
-            return -1;
+            return 0;
         int productArrayElements = 1;
         for (int offset = 0; offset < countElementsForProduct; offset++) {
             productArrayElements *= array[rowIndex][columnIndex + offset];
@@ -89,7 +87,7 @@ public class LargestProductInGrid {
         int rowIndexWithOffset = rowIndex + (countElementsForProduct - 1);
         int columnIndexWithOffset = columnIndex + (countElementsForProduct - 1);
         if (isIndexOfElementInArrayBoundaries(rowIndexWithOffset, columnIndexWithOffset, array)) {
-            return -1;
+            return 0;
         }
         int productArrayElements = 1;
         for (int offset = 0; offset < countElementsForProduct; offset++) {
@@ -111,7 +109,7 @@ public class LargestProductInGrid {
         int rowIndexWithOffset = rowIndex + (countElementsForProduct - 1);
         int columnIndexWithOffset = columnIndex - (countElementsForProduct - 1);
         if (isIndexOfElementInArrayBoundaries(rowIndexWithOffset, columnIndexWithOffset, array)) {
-            return -1;
+            return 0;
         }
 
         int productArrayElements = 1;
