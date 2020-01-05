@@ -10,7 +10,7 @@ public class LatticePath {
      * the binomial coefficient.
      *
      * @param countGridCells countGridElements = gridSize * gridSize
-     * @param gridSize the grid size
+     * @param gridSize       the grid size
      * @return count of routes in a grid
      */
     public static BigInteger findCountGridPaths(int countGridCells, int gridSize) {
@@ -25,8 +25,9 @@ public class LatticePath {
      */
     private static BigInteger factorial(int number) {
         BigInteger factorial = BigInteger.ONE;
-        for (int sequencNumber = 2; sequencNumber <= number; sequencNumber++)
+        for (int sequencNumber = 2; sequencNumber <= number; sequencNumber++) {
             factorial = factorial.multiply(BigInteger.valueOf(sequencNumber));
+        }
         return factorial;
     }
 
