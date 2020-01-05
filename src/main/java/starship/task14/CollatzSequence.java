@@ -4,6 +4,9 @@ package starship.task14;
 import java.math.BigInteger;
 
 public class CollatzSequence {
+
+    private static final int MIN_NUMBER_COLLATZ_SEQUENCE = 13;
+
     /**
      * Finds number that produces the longest Collatz sequence.
      * The Collatz iterative sequence is defined for the set of positive integers:
@@ -15,10 +18,10 @@ public class CollatzSequence {
      * @param maxNumberForFindingChain limit to find the number that gives the longest sequence
      * @return number that produces the longest sequence
      */
-    public static int findLongestCollatzSequence(int maxNumberForFindingChain) {
+    public static Integer findLongestCollatzSequence(int maxNumberForFindingChain) {
+        Integer number = null;
         int maxCountNumbersInChain = -1;
-        int number = -1;
-        for (int currentNumber = 13; currentNumber < maxNumberForFindingChain; currentNumber++) {
+        for (int currentNumber = MIN_NUMBER_COLLATZ_SEQUENCE; currentNumber < maxNumberForFindingChain; currentNumber++) {
             int countNumbersInChain = findChainLength(currentNumber);
             if (maxCountNumbersInChain < countNumbersInChain) {
                 maxCountNumbersInChain = countNumbersInChain;
