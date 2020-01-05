@@ -24,6 +24,6 @@ public class TaskRunner {
      * How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
      */
     public static void main(String[] args) {
-        System.out.println(DateCounter.countSundays(START_DATE, END_DATE, MONTH_DAY, WEEK_DAY));
+        System.out.println(DateCounter.weekDayCount(START_DATE, END_DATE, MONTH_DAY, WEEK_DAY));
     }
 }

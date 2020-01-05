@@ -13,7 +13,7 @@ public class DateCounter {
      * @param weekDay   day of the week that falls on the day of the month
      * @return the number of [weekDay] that fell on the [monthDay] in range [startDate, endDate]
      */
-    public static int countSundays(LocalDate startDate, LocalDate endDate, int monthDay, DayOfWeek weekDay) {
+    public static int weekDayCount(LocalDate startDate, LocalDate endDate, int monthDay, DayOfWeek weekDay) {
         int numberMatchedDays = 0;
         for (int currentYear = startDate.getYear(); currentYear <= endDate.getYear(); currentYear++) {
             for (int currentMonth = 1; currentMonth <= 12; currentMonth++) {
