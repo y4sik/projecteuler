@@ -5,21 +5,37 @@ public class LargestProductInGrid {
     /**
      * Find greatest product of [countElementsForProduct] adjacent numbers in the same direction.
      *
-     * @param array                   the array in which searches will occur
+     * @param array                        the array in which searches will occur
      * @param countArrayElementsForProduct the count of adjacent elements in arr, involved in product
      * @return the greatest product of adjacent n numbers
      */
-    public static int findLargestProductAdjacentElementsInGrid(int[][] array, int countArrayElementsForProduct) {
+    public static Integer findLargestProductAdjacentElementsInGrid(int[][] array, int countArrayElementsForProduct) {
+        if (countArrayElementsForProduct <= 0 || countArrayElementsForProduct >= array.length) {
+            throw new IllegalArgumentException("An argument [countArrayElementsForProduct] must be greatest than 0," +
+                    " and smaller than array length.");
+        }
         int maxProductArrayElements = -1;
         for (int rowIndex = 0; rowIndex < array.length; rowIndex++) {
             for (int columnIndex = 0; columnIndex < array[rowIndex].length; columnIndex++) {
-                maxProductArrayElements = Math.max(downProduct(rowIndex, columnIndex, countArrayElementsForProduct, array), maxProductArrayElements);
-                maxProductArrayElements = Math.max(rightProduct(rowIndex, columnIndex, countArrayElementsForProduct, array), maxProductArrayElements);
-                maxProductArrayElements = Math.max(diagonalToRightProduct(rowIndex, columnIndex, countArrayElementsForProduct, array), maxProductArrayElements);
-                maxProductArrayElements = Math.max(diagonalToLeftProduct(rowIndex, columnIndex, countArrayElementsForProduct, array), maxProductArrayElements);
+                Integer downProduct = findDownProduct(rowIndex, columnIndex, countArrayElementsForProduct, array);
+                if (downProduct != null) {
+                    maxProductArrayElements = Math.max(downProduct, maxProductArrayElements);
+                }
+                Integer rightProduct = findRightProduct(rowIndex, columnIndex, countArrayElementsForProduct, array);
+                if (rightProduct != null) {
+                    maxProductArrayElements = Math.max(rightProduct, maxProductArrayElements);
+                }
+                Integer diagonalToRightProduct = findDiagonalToRightProduct(rowIndex, columnIndex, countArrayElementsForProduct, array);
+                if (diagonalToRightProduct != null) {
+                    maxProductArrayElements = Math.max(diagonalToRightProduct, maxProductArrayElements);
+                }
+                Integer diagonalToLeftProduct = findDiagonalToLeftProduct(rowIndex, columnIndex, countArrayElementsForProduct, array);
+                if (diagonalToLeftProduct != null) {
+                    maxProductArrayElements = Math.max(diagonalToLeftProduct, maxProductArrayElements);
+                }
             }
         }
-        return maxProductArrayElements;
+        return maxProductArrayElements == -1 ? null : maxProductArrayElements;
     }
 
     /**
@@ -43,10 +59,10 @@ public class LargestProductInGrid {
      * @param array                   array, whose elements are multiplied
      * @return product of [countElementsForProduct] elements vertically down
      */
-    private static int downProduct(int rowIndex, int columnIndex, int countElementsForProduct, int[][] array) {
+    private static Integer findDownProduct(int rowIndex, int columnIndex, int countElementsForProduct, int[][] array) {
         int rowIndexWithOffset = rowIndex + (countElementsForProduct - 1);
         if (isIndexOfElementInArrayBoundaries(rowIndexWithOffset, columnIndex, array))
-            return 0;
+            return null;
         int productArrayElements = 1;
         for (int offset = 0; offset < countElementsForProduct; offset++) {
             productArrayElements *= array[rowIndex + offset][columnIndex];
@@ -63,10 +79,10 @@ public class LargestProductInGrid {
      * @param array                   array, whose elements are multiplied
      * @return product of [countElementsForProduct] elements horizontally right
      */
-    private static int rightProduct(int rowIndex, int columnIndex, int countElementsForProduct, int[][] array) {
+    private static Integer findRightProduct(int rowIndex, int columnIndex, int countElementsForProduct, int[][] array) {
         int columnIndexWithOffset = columnIndex + (countElementsForProduct - 1);
         if (isIndexOfElementInArrayBoundaries(rowIndex, columnIndexWithOffset, array))
-            return 0;
+            return null;
         int productArrayElements = 1;
         for (int offset = 0; offset < countElementsForProduct; offset++) {
             productArrayElements *= array[rowIndex][columnIndex + offset];
@@ -83,11 +99,11 @@ public class LargestProductInGrid {
      * @param array                   array, whose elements are multiplied
      * @return product of [countElementsForProduct] elements diagonally to the right
      */
-    private static int diagonalToRightProduct(int rowIndex, int columnIndex, int countElementsForProduct, int[][] array) {
+    private static Integer findDiagonalToRightProduct(int rowIndex, int columnIndex, int countElementsForProduct, int[][] array) {
         int rowIndexWithOffset = rowIndex + (countElementsForProduct - 1);
         int columnIndexWithOffset = columnIndex + (countElementsForProduct - 1);
         if (isIndexOfElementInArrayBoundaries(rowIndexWithOffset, columnIndexWithOffset, array)) {
-            return 0;
+            return null;
         }
         int productArrayElements = 1;
         for (int offset = 0; offset < countElementsForProduct; offset++) {
@@ -105,11 +121,11 @@ public class LargestProductInGrid {
      * @param array                   array, whose elements are multiplied
      * @return product of [countElementsForProduct] elements diagonally to the left
      */
-    private static int diagonalToLeftProduct(int rowIndex, int columnIndex, int countElementsForProduct, int[][] array) {
+    private static Integer findDiagonalToLeftProduct(int rowIndex, int columnIndex, int countElementsForProduct, int[][] array) {
         int rowIndexWithOffset = rowIndex + (countElementsForProduct - 1);
         int columnIndexWithOffset = columnIndex - (countElementsForProduct - 1);
         if (isIndexOfElementInArrayBoundaries(rowIndexWithOffset, columnIndexWithOffset, array)) {
-            return 0;
+            return null;
         }
 
         int productArrayElements = 1;
