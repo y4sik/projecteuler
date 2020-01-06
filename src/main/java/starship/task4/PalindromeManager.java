@@ -15,8 +15,11 @@ public class PalindromeManager {
                     " and must be greatest than start (end > start)");
         }
         int maxPalindrome = -1;
-        for (int currentNumber1 = end; currentNumber1 >= start + ((end - start) / 2); currentNumber1--) {
-            for (int currentNumber2 = end; currentNumber2 >= start; currentNumber2--) {
+        for (int currentNumber1 = end; currentNumber1 >= start; currentNumber1--) {
+            if (maxPalindrome > currentNumber1 * currentNumber1) {
+                break;
+            }
+            for (int currentNumber2 = currentNumber1; currentNumber2 >= start; currentNumber2--) {
                 int product = currentNumber1 * currentNumber2;
                 if (isPalindrome(Integer.toString(product)) && product > maxPalindrome) {
                     maxPalindrome = product;
