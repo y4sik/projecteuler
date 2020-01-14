@@ -37,6 +37,7 @@ public class TaskRunner {
      */
 
     public static void main(String[] args) {
-        System.out.println(LargeNumberManager.largestProductInSeries(COUNT_ADJACENT_DIGITS, NUMERIC_STRING));
+        LargeNumberManager largeNumberManager = LargeNumberManager.getInstance();
+        System.out.println(largeNumberManager.largestProductInSeries(COUNT_ADJACENT_DIGITS, NUMERIC_STRING));
     }
 }

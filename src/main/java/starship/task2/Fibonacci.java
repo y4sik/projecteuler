@@ -1,6 +1,18 @@
 package starship.task2;
 
-public class Fibonacci {
+class Fibonacci {
+
+    private static Fibonacci instance;
+
+    private Fibonacci() {
+    }
+
+    static Fibonacci getInstance() {
+        if (instance == null) {
+            instance = new Fibonacci();
+        }
+        return instance;
+    }
 
     /**
      * Find the sum of even Fibonacci numbers, below limit.
@@ -8,7 +20,7 @@ public class Fibonacci {
      * @param limit the restriction for finding fibonacci numbers
      * @return sum of even Fibonacci numbers
      */
-    public static int findSumEvenFibonacciNumbers(int limit) {
+    int findSumEvenFibonacciNumbers(int limit) {
         int sum = 0;
         int fib1 = 1;
         int fib2 = 2;

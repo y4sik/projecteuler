@@ -1,6 +1,18 @@
 package starship.task9;
 
-public class PythagoreanTriplet {
+ class PythagoreanTriplet {
+
+    private static PythagoreanTriplet instance;
+
+    private PythagoreanTriplet() {
+    }
+
+    static PythagoreanTriplet getInstance() {
+        if (instance == null) {
+            instance = new PythagoreanTriplet();
+        }
+        return instance;
+    }
 
     /**
      * A Pythagorean triplet is a set of three natural numbers,
@@ -10,7 +22,7 @@ public class PythagoreanTriplet {
      *               where c^2 = a^2 + b^2
      * @return product of Pythagorean triplet or -1 if does not exist
      */
-    public static Integer findPythagoreanTripletProduct(int number) {
+     Integer findPythagoreanTripletProduct(int number) {
         for (int numberA = 1; numberA < number; numberA++) {
             for (int numberB = numberA + 1; numberB < number; numberB++) {
                 int numberC = number - (numberA + numberB);
