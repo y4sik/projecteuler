@@ -2,7 +2,19 @@ package starship.task13;
 
 import java.math.BigInteger;
 
-public class LargeAdder {
+class LargeAdder {
+
+    private static LargeAdder instance;
+
+    private LargeAdder() {
+    }
+
+    static LargeAdder getInstance() {
+        if (instance == null) {
+            instance = new LargeAdder();
+        }
+        return instance;
+    }
 
     /**
      * Finds the sum of large numbers.
@@ -10,7 +22,7 @@ public class LargeAdder {
      * @param numbersArray the array of large numbers
      * @return first n digits of the sum
      */
-    public static String getFirstDigitsOfNumbersSum(String[] numbersArray, int countDigits) {
+    String getFirstDigitsOfNumbersSum(String[] numbersArray, int countDigits) {
         BigInteger numbersSum = BigInteger.ZERO;
         for (String numberFromArray : numbersArray)
             numbersSum = numbersSum.add(new BigInteger(numberFromArray));

@@ -13,6 +13,7 @@ public class TaskRunner {
      * values do not exceed four million, find the sum of the even-valued terms.
      */
     public static void main(String[] args) {
-        System.out.println(Fibonacci.findSumEvenFibonacciNumbers(LIMIT));
+        Fibonacci fibonacci = Fibonacci.getInstance();
+        System.out.println(fibonacci.findSumEvenFibonacciNumbers(LIMIT));
     }
 }

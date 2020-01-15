@@ -9,6 +9,7 @@ public class TaskRunner {
      * Find the sum of all the primes below two million.
      */
     public static void main(String[] args) {
-        System.out.println(PrimeManager.findSumPrimes(LIMIT_FINDING_PRIMES));
+        PrimeManager primeManager = PrimeManager.getInstance();
+        System.out.println(primeManager.findSumPrimes(LIMIT_FINDING_PRIMES));
     }
 }

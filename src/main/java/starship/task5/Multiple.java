@@ -1,6 +1,18 @@
 package starship.task5;
 
-public class Multiple {
+class Multiple {
+
+    private static Multiple instance;
+
+    private Multiple() {
+    }
+
+    static Multiple getInstance() {
+        if (instance == null) {
+            instance = new Multiple();
+        }
+        return instance;
+    }
 
     /**
      * Find the smallest positive number that is evenly divisible
@@ -10,7 +22,7 @@ public class Multiple {
      * @param to   the number at which the multiplicity test ends
      * @return smallest multiple
      */
-    public static long findSmallestNumberDividedByNumbersInRange(int from, int to) {
+    long findSmallestNumberDividedByNumbersInRange(int from, int to) {
         long leastCommonMultiple = 1;
         for (int number = from; number <= to; number++) {
             leastCommonMultiple = findLeastCommonMultiple(number, leastCommonMultiple);
@@ -25,7 +37,7 @@ public class Multiple {
      * @param number2 value with which the LCM is to be computed
      * @return the least common multiple of numbers a and b
      */
-    private static long findLeastCommonMultiple(long number1, long number2) {
+    private long findLeastCommonMultiple(long number1, long number2) {
         return number1 * number2 / findGreatestCommonDivisor(number1, number2);
     }
 
@@ -36,7 +48,7 @@ public class Multiple {
      * @param number2 value with which the GCD is to be computed
      * @return greatest common divisor of numbers a and b
      */
-    private static long findGreatestCommonDivisor(long number1, long number2) {
+    private long findGreatestCommonDivisor(long number1, long number2) {
         while (number2 != 0) {
             long divisionRemainder = number1 % number2;
             number1 = number2;
