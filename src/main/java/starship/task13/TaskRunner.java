@@ -115,7 +115,6 @@ public class TaskRunner {
      * 53503534226472524250874054075591789781264330331690
      */
     public static void main(String[] args) {
-        LargeAdder largeAdder = LargeAdder.getInstance();
-        System.out.println(largeAdder.getFirstDigitsOfNumbersSum(LARGE_NUMBER, COUNT_DIGITS));
+        System.out.println(LargeAdder.getFirstDigitsOfNumbersSum(LARGE_NUMBER, COUNT_DIGITS));
     }
 }
