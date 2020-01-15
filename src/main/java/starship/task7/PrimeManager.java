@@ -1,18 +1,6 @@
 package starship.task7;
 
- class PrimeManager {
-
-     private static PrimeManager instance;
-
-     private PrimeManager() {
-     }
-
-     static PrimeManager getInstance() {
-         if (instance == null) {
-             instance = new PrimeManager();
-         }
-         return instance;
-     }
+public class PrimeManager {
 
     /**
      * Finds n-th prime number (n > 0).
@@ -20,7 +8,7 @@ package starship.task7;
      * @param ordinalPrimeNumber the ordinal number on which the prime number is searched
      * @return n-th prime number
      */
-      int findPrimeByOrdinalNumber(int ordinalPrimeNumber) {
+    public static int findPrimeByOrdinalNumber(int ordinalPrimeNumber) {
         int currentOrdinalPrimeNumber = 0;
         int number = 0;
         while (currentOrdinalPrimeNumber < ordinalPrimeNumber) {
@@ -38,7 +26,7 @@ package starship.task7;
      * @param number the number to be tested on prime
      * @return true if number is prime
      */
-    private boolean isPrime(int number) {
+    private static boolean isPrime(int number) {
         if (number == 0 || number == 1) {
             return false;
         }

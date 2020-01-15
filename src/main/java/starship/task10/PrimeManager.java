@@ -1,18 +1,6 @@
 package starship.task10;
 
-class PrimeManager {
-
-    private static PrimeManager instance;
-
-    private PrimeManager() {
-    }
-
-    static PrimeManager getInstance() {
-        if (instance == null) {
-            instance = new PrimeManager();
-        }
-        return instance;
-    }
+public class PrimeManager {
 
     /**
      * Find the sum of all the primes below limit
@@ -20,7 +8,7 @@ class PrimeManager {
      * @param limitFindingPrimes the number to which prime numbers must be found
      * @return sum of primes below limit
      */
-    long findSumPrimes(int limitFindingPrimes) {
+    public static long findSumPrimes(int limitFindingPrimes) {
         long sumPrimes = 0;
         for (int number = 0; number < limitFindingPrimes; number++) {
             if (isPrime(number)) {
@@ -36,7 +24,7 @@ class PrimeManager {
      * @param number the number to be tested on prime
      * @return true if number is prime
      */
-    private boolean isPrime(int number) {
+    private static boolean isPrime(int number) {
         if (number == 2) {
             return true;
         }

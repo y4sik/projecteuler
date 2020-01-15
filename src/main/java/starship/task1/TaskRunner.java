@@ -1,6 +1,5 @@
 package starship.task1;
 
-
 public class TaskRunner {
     private static final int LIMIT = 1000;
     private static final int NUMBER_A = 3;
@@ -14,7 +13,6 @@ public class TaskRunner {
      * Find the sum of all the multiples of 3 or 5 below 1000.
      */
     public static void main(String[] args) {
-        MultipleManager multipleManager = MultipleManager.getInstance();
-        System.out.println(multipleManager.findSumNumbersMultipleToArrayElements(LIMIT, NUMBER_A, NUMBER_B));
+        System.out.println(MultipleManager.findSumNumbersMultipleToArrayElements(LIMIT, NUMBER_A, NUMBER_B));
     }
 }

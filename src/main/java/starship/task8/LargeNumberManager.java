@@ -1,18 +1,6 @@
 package starship.task8;
 
-class LargeNumberManager {
-
-    private static LargeNumberManager instance;
-
-    private LargeNumberManager() {
-    }
-
-    static LargeNumberManager getInstance() {
-        if (instance == null) {
-            instance = new LargeNumberManager();
-        }
-        return instance;
-    }
+public class LargeNumberManager {
 
     /**
      * Find the largest product of adjacent digits in a numeric string
@@ -22,7 +10,7 @@ class LargeNumberManager {
      *                            largest product
      * @return largest product
      */
-    long largestProductInSeries(int countAdjacentDigits, String numericString) {
+    public static long largestProductInSeries(int countAdjacentDigits, String numericString) {
         long maxProduct = 1;
         for (int rowIndex = 0; rowIndex < numericString.length() - countAdjacentDigits; rowIndex++) {
             long currentProduct = 1;

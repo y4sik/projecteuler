@@ -10,7 +10,6 @@ public class TaskRunner {
      */
 
     public static void main(String[] args) {
-        PrimeManager primeManager = PrimeManager.getInstance();
-        System.out.println(primeManager.findPrimeByOrdinalNumber(NUMBER_OF_PRIME));
+        System.out.println(PrimeManager.findPrimeByOrdinalNumber(NUMBER_OF_PRIME));
     }
 }
