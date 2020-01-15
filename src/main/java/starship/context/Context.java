@@ -1,8 +1,6 @@
 package starship.context;
 
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -15,7 +13,7 @@ public class Context {
 
     private static final String CONFIG_FILE_NAME = "config.properties";
 
-    private Map<String, String> beanDefinitions;
+    private Map<String, String> beanDefinitions = new HashMap<>();
     private Map<String, Object> beanContainer = new HashMap<>();
 
     private Context() throws IOException {
