@@ -1,5 +1,7 @@
 package starship.task.task1;
 
+import starship.context.annotation.Call;
+
 public class MultipleManager {
 
     /**
@@ -20,5 +22,15 @@ public class MultipleManager {
             }
         }
         return sum;
+    }
+
+    @Call(param1 = "Hello", param2 = "World")
+    public void secondInit(String param1, String param2) {
+        System.out.println(String.format("%s %s!", param1, param2));
+    }
+
+    @Call(param1 = "Andrusha")
+    public void init(String param) {
+        System.out.println(String.format("Hi %s!", param));
     }
 }
