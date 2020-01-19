@@ -1,6 +1,7 @@
 package starship.context;
 
 import starship.context.annotation.AnnotationHandler;
+import starship.context.annotation.Call;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -50,7 +51,7 @@ public class Context {
             throw new IllegalArgumentException(String.format("No bean with name [%s]. Check config.properties file.", beanName));
         }
         bean = Class.forName(beanDefinition).getDeclaredConstructor().newInstance();
-        AnnotationHandler.handle(bean);
+        AnnotationHandler.handle(bean, Call.class);
         beanContainer.put(beanName, bean);
         return bean;
     }

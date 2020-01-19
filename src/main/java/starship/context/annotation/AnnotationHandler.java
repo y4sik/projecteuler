@@ -5,14 +5,14 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
 public class AnnotationHandler {
-    public static void handle(Object object) {
+    public static void handle(Object object, Class<? extends Annotation> clazz) {
         Optional.ofNullable(object).orElseThrow(() -> new IllegalArgumentException("Object can't be null."));
         Arrays.stream(object.getClass().getDeclaredMethods())
-                .filter(classMethod -> classMethod.isAnnotationPresent(Call.class))
+                .filter(classMethod -> classMethod.isAnnotationPresent(clazz))
                 .forEachOrdered(method -> {
                     method.setAccessible(true);
-                    Annotation annotation = method.getAnnotation(Call.class);
-                    Object[] annotationParams = getAnnotationParams(annotation);
+                    Annotation annotation = method.getAnnotation(clazz);
+                    Object[] annotationParams = getAnnotationParams(annotation, clazz);
                     try {
                         method.invoke(object, annotationParams);
                     } catch (IllegalAccessException | InvocationTargetException e) {
@@ -21,8 +21,8 @@ public class AnnotationHandler {
                 });
     }
 
-    private static Object[] getAnnotationParams(Annotation annotation) {
-        return Arrays.stream(Call.class.getDeclaredMethods())
+    private static Object[] getAnnotationParams(Annotation annotation, Class<? extends Annotation> clazz) {
+        return Arrays.stream(clazz.getDeclaredMethods())
                 .map(annotationMethod -> {
                     try {
                         return annotationMethod.invoke(annotation);
